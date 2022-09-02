@@ -33,6 +33,7 @@ window.dom = {
     return array;
   },
   attr(node, name, value) {
+    // 重载
     if (arguments.length === 3) {
       node.setAttribute(name, value);
     } else if (arguments.length === 2) {
@@ -40,7 +41,7 @@ window.dom = {
     }
   },
   text(node, string) {
-    // 重载
+    // 适配
     if (arguments.length === 2) {
       if ("innerText" in node) {
         node.innerText = string;
